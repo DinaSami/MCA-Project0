@@ -1,8 +1,8 @@
 import React from 'react';
 import Ticket from './ticket';
 import './admin.css';
-import io from 'socket.io-client';
-const socket = io('localhost:5000/', { transports: ['websocket'] });
+// import io from 'socket.io-client';
+// const socket = io('localhost:5000/', { transports: ['websocket'] });
 class Admin extends React.Component {
   constructor(props) {
     super(props);
@@ -16,18 +16,19 @@ class Admin extends React.Component {
 
     const staffName = prompt("please Dr Enter your name...");
     this.setState({ staffName });
-    socket.on('connect', () => {
+    this.props.socket.on('connect', () => {
       //1a
-      socket.emit('join', { name: staffName });
-      socket.on('newTicket', (payload) => {
+      this.props.socket.emit('join', { name: staffName });
+      this.props.socket.emit('getAll');
+      this.props.socket.on('newTicket', (payload) => {
         this.setState({ tickets: [...this.state.tickets, payload] });
       });
-      socket.on('onlineStaff', (payload) => {
+      this.props.socket.on('onlineStaff', (payload) => {
         this.setState({ onlineStaff: [...this.state.onlineStaff, payload] });
         // console.log(this.state.onlineStaff);
       });
-      
-      socket.on('offlineStaff', (payload) => {
+
+      this.props.socket.on('offlineStaff', (payload) => {
         this.setState({
           onlineStaff: this.state.onlineStaff.filter((staff) => staff.id !== payload.id),
         });
@@ -36,14 +37,14 @@ class Admin extends React.Component {
   }
   handleClaim = (id, socketId) => {
     // console.log( this.state.staffName);
-    socket.emit('claim', { id, name: this.state.staffName, patientId: socketId });
+    this.props.socket.emit('claim', { id, name: this.state.staffName, patientId: socketId });
   };
   render() {
     console.log('ffff', this.state.onlineStaff)
     return (
       <main className="admin-container">
         <section id="container">
-          <h2>Appointment Cards</h2>
+          <h2>Opened Tickets</h2>
           <section id="tickets">
             {this.state.tickets.map((ticket) => {
               return (
@@ -53,16 +54,10 @@ class Admin extends React.Component {
           </section>
         </section>
         <aside id="online-staff">
-          <h2>Available Doctors</h2>
-          {this.state.onlineStaff.map((staff) => {
-            return (
-              <>
+          <h2>Available Doctoers</h2>
+          {this.state.onlineStaff.map((staff) => (
             <h2 key={staff.id}>{staff.name}</h2>
-              <h2>hhhhhhhhhhhhhhhhh</h2>
-              </>
-              )
-          }
-          )}
+          ))}
         </aside>
       </main>
     );
