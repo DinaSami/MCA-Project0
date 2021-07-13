@@ -2,11 +2,18 @@ import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 import Home from '../home';
 import Admin from '../admin';
+import io from 'socket.io-client';
+
+const SERVER_URL = process.env.SERVER_URL || 'localhost:5000/';
+
+const socket = io('localhost:5000/', { transports: ['websocket'] });
+
+
 function Main() {
   return (
     <Switch>
-      <Route exact path="/" component={Home} />
-      <Route exact path="/doctors" component={Admin} />
+      <Route exact path="/" render={(props) => <Home {...props} socket={socket} />} />
+      <Route path="/doctors" render={(props) => <Admin {...props} socket={socket} />} />
       <Route>
         <div>404</div>
       </Route>
