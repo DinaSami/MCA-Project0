@@ -30,3 +30,16 @@
   grid-column-start: 3;
   grid-column-end: 6;
 }
+#medicalForm > div.contain.form-row{
+  
+  border-left-width: 23px;
+  margin-left: 286px;
+
+  padding-bottom: 25px;
+  padding-top: 25px;
+
+}
+#medicalForm > div:nth-child(2) > select{
+  margin-bottom: 35px;
+
+}

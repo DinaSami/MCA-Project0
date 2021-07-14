@@ -7,7 +7,260 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
+/* code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}  */
+.my-footer-color {
+  background-color: #254288;  ;
+  padding: 1px 1px .1px 1px;
+  color: white;
+   }
+  .text-footer {
+     font-size: 18px  ;
+     font-weight: bolder;
+   }
+   .my-footer {
+   
+    width: 400px;
+    
+  }
+  .text-footer {
+    font-size: 18px  ;
+    font-weight: bolder;
+  }
+
+
+ 
+  /* div.pullDown a:hover:before
+{
+    height: 100%;
+} */
+
+/* Pull up  */
+/* div.pullUp a:before
+{
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    left: 0px;
+    bottom: 0px;
+    content: '';
+    background: #FFF;
+    opacity: 0.3;
+    transition: all 0.3s;
+} */
+
+
+
+/* div.pullRight a:hover:before
+{
+    width: 100%;
+} */
+
+/* Pull left  */
+/* div.pullLeft a:before
+{
+    position: absolute;
+    width: 2px;
+    height: 100%;
+    right: 0px;
+    top: 0px;
+    content: '';
+    background: #FFF;
+    opacity: 0.3;
+    transition: all 0.3s;
+} */
+
+/* div.pullLeft a:hover:before
+{
+    width: 100%;
+} */
+
+/* Pull up and down  */
+/* div.pullUpDown a:before, div.pullUpDown a:after
+{
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    left: 0px;
+    content: '';
+    background: #FFF;
+    opacity: 0.3;
+    transition: all 0.3s;
+} */
+
+/* div.pullUpDown a:before
+{
+    top: 0px;
+}  */
+
+/* div.pullUpDown a:after
+{
+    bottom: 0px;
+} */
+
+/* div.pullUpDown a:hover:before, div.pullUpDown a:hover:after
+{
+    height: 100%;
+} */
+
+/* Pull right and left  */
+/* div.pullRightLeft a:before, div.pullRightLeft a:after
+{
+    position: absolute;
+    width: 2px;
+    height: 100%;
+    top: 0px;
+    content: '';
+    background: #FFF;
+    opacity: 0.3;
+    transition: all 0.3s;
+} */
+
+/* div.pullRightLeft a:before
+{
+    left: 0px;
+}  */
+
+/* div.pullRightLeft a:after
+{
+    right: 0px;
+} */
+
+/* div.pullRightLeft a:hover:before, div.pullRightLeft a:hover:after
+{
+    width: 100%;
+} */
+
+/* Highlight text out  */
+/* div.highlightTextOut a
+{
+    color: rgba(255, 255, 255, 0.3); 
+} */
+
+/* div.highlightTextOut a:before, div.highlightTextIn a:before
+{
+    position: absolute;
+    color: #FFF;
+    top: 0px;
+    left: 0px;
+    padding: 10px;
+    overflow: hidden;
+    content: attr(alt);
+    transition: all 0.3s;
+    transform: scale(0.8);
+    opacity: 0;
+}  */
+
+/* div.highlightTextOut a:hover:before, div.highlightTextIn a:hover:before
+{
+    transform: scale(1);
+    opacity: 1;
+} */
+
+    /* color: rgba(0, 0, 0, 0.4); 
+}
+
+div.highlightTextIn a:before
+{
+    transform: scale(1.2);
+}  */
+
+/*____________________________________________________________*/
+
+/* .btn-outline-primary1  {
+  color: #344fa1 !important  ;
+  
+  font-weight: bold !important;
+  border: 3px solid !important;
+} */
+ 
+
+/* .btn-outline-primary1:hover  {
+    color: white !important;
+    background-color: #344fa1d5 !important;
+    border-radius: 10px  !important;
+} */
+
+
+ .my-footer {
+   
+   width: 400px;
+   
+ }
+ /* .my-footer-color {
+background-color: #254288;  ;
+padding: 1px 1px .1px 1px;
+color: white;
+ } */
+/* .text-footer {
+   font-size: 18px  ;
+   font-weight: bolder;
+ } */
+ 
+
+/* .icons-position1 a {
+  display: inline-block !important;
+ 
+  margin: 0px !important;} */
+/* .newButton{
+    margin-top: 35px;
+    height: 50px;
+} */
+/* .rounded {
+border-radius: 50%;
+} */
+/* .newEdit{
+    text-align: center;
+} */
+
+
+/* .userInfo p  {
+  color:#21094ed3 !important;
+font-weight: bolder !important;
+font-size: 20px !important ;
+} */
+
+/* .cardColor1 {
+  background-color: hsla(216, 98%, 52%, 0.151) !important;border: 1px solid #0d6efd;
+} */
+
+/* .userInfo h6, h3  {
+  color:#21094ed3 !important;
+ 
+} */
+
+/* .newButton1 {
+  margin-top: 4rem;
+  padding-left: 2rem !important;
+  padding-right: 2rem !important;
+  border:solid 2px !important ;
+} */
+ 
+
+/* .deleteProp {
+  background-color: rgba(255, 0, 0, 0.747) !important;
+  color: white !important;
+  font-weight: bold  !important;
+} */
+/* #root > div > div:nth-child(3) > div > div > div > form > div.row > div:nth-child(3) > div > button{
+  
+  margin-right: 0px ;
+  margin-left: 0px ;
+
+}
+  */
+/* .convResult{
+  margin-left: 12%;
+  color: rgba(0, 0, 0, 0.685);
+} */
+
+/* .notVisi{
+  display: inline;
+  font-size: 25px;
+} */
+#scroll > div > section{
+  height: 80px;
+  /* width: 100px; */
 }
