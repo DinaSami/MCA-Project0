@@ -54,7 +54,7 @@ class Admin extends React.Component {
           </section>
         </section>
         <aside id="online-staff">
-          <h2>Available Doctoers</h2>
+          <h2>Available Doctors</h2>
           {this.state.onlineStaff.map((staff) => (
             <h2 key={staff.id}>{staff.name}</h2>
           ))}

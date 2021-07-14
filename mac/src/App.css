@@ -8,14 +8,16 @@ body {
   max-width: 1440px;
 }
 header {
-  background: deepskyblue;
+  background: #254288;
   width: 100%;
 }
 
 header nav ul li {
   display: inline-block;
-  padding: 20px;
+  padding-right: 140px;
+  padding-top: 30px;
   color: white;
+  
 }
 header nav ul li:first-child {
   font-size: large;
@@ -25,4 +27,8 @@ header nav ul li:first-child {
 header nav ul li a {
   color: white;
   text-decoration: none;
+
+}
+#root > header > nav > ul > li:nth-child(1){
+  margin-left: 37px;
 }
