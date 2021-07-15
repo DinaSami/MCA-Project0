@@ -17,7 +17,6 @@ class Admin extends React.Component {
     const staffName = prompt("please Dr Enter your name...");
     this.setState({ staffName });
     this.props.socket.on('connect', () => {
-      //1a
       this.props.socket.emit('join', { name: staffName });
       this.props.socket.emit('getAll');
       this.props.socket.on('newTicket', (payload) => {
@@ -25,7 +24,6 @@ class Admin extends React.Component {
       });
       this.props.socket.on('onlineStaff', (payload) => {
         this.setState({ onlineStaff: [...this.state.onlineStaff, payload] });
-        // console.log(this.state.onlineStaff);
       });
 
       this.props.socket.on('offlineStaff', (payload) => {

@@ -16,6 +16,9 @@ const queue = {
 app.use(cors());
 
 io.on('connection', (socket) => {
+  socket.on('message', ({ name, message }) => {
+    io.emit('message', { name, message })
+  })
   socket.on('join', (payload) => {
     // socket.join will put the socket in a private room
     const staff = { name: payload.name, id: socket.id };
@@ -43,11 +46,14 @@ io.on('connection', (socket) => {
       socket.emit('newTicket', ticket);
     });
   });
+ 
   socket.on('disconnect', () => {
     socket.to(staffRoom).emit('offlineStaff', { id: socket.id });
     queue.staff = queue.staff.filter((s) => s.id !== socket.id);
   });
 });
+
+
 server.listen(PORT, () => {
   console.log(`Listening on PORT ${PORT}`);
 });

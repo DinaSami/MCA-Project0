@@ -1,15 +1,11 @@
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import Col from 'react-bootstrap/Col';
-// import {Button}  from 'mdb-react-ui-kit';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import React from 'react';
 import './home.css';
+import Slideshow from '../slideshow/slideshow';
 import Test1 from '../doc/test1';
-// import io from 'socket.io-client';
-// const SERVER_URL = process.env.SERVER_URL || 'localhost:5000/';
-// const socket = io(SERVER_URL, { transports: ['websocket'] });
-
 
 class Home extends React.Component {
   constructor(props) {
@@ -48,6 +44,7 @@ class Home extends React.Component {
   render() {
     return (
       <>
+       <Slideshow/>
         <Test1 />
       <br></br>
         <div className="form-card">
@@ -69,8 +66,6 @@ class Home extends React.Component {
                 <Form.Control
                   type="text"
                   name="lastName"
-                  // id="lastName"
-                  // value={this.state.firstName}
                   onChange={this.handleChange}
                 />
               </Form.Group>
@@ -91,11 +86,11 @@ class Home extends React.Component {
             </Form.Group>
             <Form.Group >
               <Button variant="outline-primary" className='mx-2' onClick={this.handleChange} value="Saturday" name="day">Saturday</Button>
-              <Button variant="outline-secondary" className='mx-2' onClick={this.handleChange} value="Sunday">Sunday</Button>
-              <Button variant="outline-success" className='mx-2' onClick={this.handleChange} value="Monday">Monday</Button>
-              <Button variant="outline-warning" className='mx-2' onClick={this.handleChange} value="Tuesday">Tuesday</Button>
-              <Button variant="outline-danger" className='mx-2' onClick={this.handleChange} value='Wednesday'>Wednesday</Button>
-              <Button variant="outline-info" className='mx-2' onClick={this.handleChange} value='Thursday'>Thursday</Button>
+              <Button variant="outline-secondary" className='mx-2' onClick={this.handleChange} value="Sunday"  name="day">Sunday</Button>
+              <Button variant="outline-success" className='mx-2' onClick={this.handleChange} value="Monday" name="day">Monday</Button>
+              <Button variant="outline-warning" className='mx-2' onClick={this.handleChange} value="Tuesday" name="day">Tuesday</Button>
+              <Button variant="outline-danger" className='mx-2' onClick={this.handleChange} value='Wednesday' name="day">Wednesday</Button>
+              <Button variant="outline-info" className='mx-2' onClick={this.handleChange} value='Thursday' name="day">Thursday</Button>
             </Form.Group>
             <br></br>
             <br></br>
