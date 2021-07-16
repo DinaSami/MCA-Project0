@@ -11,6 +11,9 @@ function Header() {
             <Link to="/">Home</Link>
           </li>
           <li>
+            <Link to="/booking">Book Now!</Link>
+          </li>
+          <li>
             <Link to="/doctors">Dotors</Link>
           </li>
           <li>
