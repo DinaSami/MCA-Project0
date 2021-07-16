@@ -76,6 +76,10 @@
   h2{
 	  text-align: center;
 	  margin-top: 20px;
+	  color: #254288
+	  ;
+	  /* border-bottom: 2px solid  rgba(0, 0, 0, 0.151); */
+	  
 
   }
   h4{
@@ -83,4 +87,13 @@
   }
   h6{
 	  color: #fff;
+  }
+  #root > div:nth-child(9) > div:nth-child(1){
+	  
+    margin-top: 0px!important;
+
+  }
+  #root > h2{
+    margin-top: 46px;
+    margin-bottom: 0px;
   }
