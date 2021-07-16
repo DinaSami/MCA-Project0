@@ -4,7 +4,6 @@ import Col from 'react-bootstrap/Col';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import React from 'react';
 import './home.css';
-import Slideshow from '../slideshow/slideshow';
 import Test1 from '../doc/test1';
 
 class Home extends React.Component {
@@ -44,9 +43,7 @@ class Home extends React.Component {
   render() {
     return (
       <>
-       <Slideshow/>
-        <Test1 />
-      <br></br>
+         <h3>Booking Form</h3>
         <div className="form-card">
           <Form onSubmit={this.handleSubmit} id='medicalForm'>
             <Form.Row className='contain'>
@@ -56,7 +53,6 @@ class Home extends React.Component {
                   type="text"
                   name="firstName"
                   id="firstName1"
-                  // value={this.state.firstName}
                   onChange={this.handleChange}
                 />
 
@@ -86,7 +82,7 @@ class Home extends React.Component {
             </Form.Group>
             <Form.Group >
               <Button variant="outline-primary" className='mx-2' onClick={this.handleChange} value="Saturday" name="day">Saturday</Button>
-              <Button variant="outline-secondary" className='mx-2' onClick={this.handleChange} value="Sunday"  name="day">Sunday</Button>
+              <Button variant="outline-secondary" className='mx-2' onClick={this.handleChange} value="Sunday" name="day">Sunday</Button>
               <Button variant="outline-success" className='mx-2' onClick={this.handleChange} value="Monday" name="day">Monday</Button>
               <Button variant="outline-warning" className='mx-2' onClick={this.handleChange} value="Tuesday" name="day">Tuesday</Button>
               <Button variant="outline-danger" className='mx-2' onClick={this.handleChange} value='Wednesday' name="day">Wednesday</Button>
@@ -98,11 +94,10 @@ class Home extends React.Component {
             <Button variant="primary" size="lg" active type='submit' onClick={this.welcome}>Book Now!</Button>
 
           </Form>
-          <div class="card">
-
+          <div >
           </div>
-
         </div>
+        <Test1 />
       </>
     );
 

@@ -20,7 +20,6 @@ export default class Test1 extends Component {
                         <li className='ulId'>Saturday</li>
                         <li className='ulId'>Monday</li>
                         <li className='ulId'>Wednesday</li>
-                        {/* <li className='ulId'>Saturday</li> */}
 
                     </ul>
                 </div>

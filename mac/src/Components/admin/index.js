@@ -1,8 +1,7 @@
 import React from 'react';
 import Ticket from './ticket';
 import './admin.css';
-// import io from 'socket.io-client';
-// const socket = io('localhost:5000/', { transports: ['websocket'] });
+
 class Admin extends React.Component {
   constructor(props) {
     super(props);
@@ -34,7 +33,6 @@ class Admin extends React.Component {
     });
   }
   handleClaim = (id, socketId) => {
-    // console.log( this.state.staffName);
     this.props.socket.emit('claim', { id, name: this.state.staffName, patientId: socketId });
   };
   render() {
@@ -63,3 +61,6 @@ class Admin extends React.Component {
 }
 
 export default Admin;
+
+
+

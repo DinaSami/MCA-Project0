@@ -39,13 +39,12 @@ export default class Footer extends Component {
                                         <i class="fas fa-envelope   "></i>
             MCA@ltuc.com
           </p>
-                                    {/* <p><i class="fas fa-phone me-3"></i> + 00962 795554444</p> */}
                                 </div>
                             </div >
                         </div >
                     </section >
                     <div class="text-center p-4  my-footer-color "  >
-                        <hr width={'50%'} className='hrdim' />
+                        <hr width={'0%'} className='hrdim' />
                         © 2021 MCATeam
                      </div>
                 </div >
