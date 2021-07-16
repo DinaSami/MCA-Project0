@@ -43,7 +43,7 @@ class Home extends React.Component {
   render() {
     return (
       <>
-         <h3>Booking Form</h3>
+        <h3>Booking Form</h3>
         <div className="form-card">
           <Form onSubmit={this.handleSubmit} id='medicalForm'>
             <Form.Row className='contain'>
