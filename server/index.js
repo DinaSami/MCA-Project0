@@ -1,5 +1,7 @@
 const express = require('express');
 const app = express();
+require('dotenv').config();
+const router = require('./route');
 const http = require('http');
 const PORT = process.env.PORT || 5000;
 const cors = require('cors');
@@ -13,7 +15,13 @@ const queue = {
   staff: [],
 };
 
+const mongoose = require('mongoose');
+
+const MONGODB_URI = process.env.MONGODB_URI;
+
 app.use(cors());
+app.use(express.json());
+app.use('/inf', router);
 
 io.on('connection', (socket) => {
   socket.on('message', ({ name, message }) => {
@@ -46,7 +54,7 @@ io.on('connection', (socket) => {
       socket.emit('newTicket', ticket);
     });
   });
- 
+
   socket.on('disconnect', () => {
     socket.to(staffRoom).emit('offlineStaff', { id: socket.id });
     queue.staff = queue.staff.filter((s) => s.id !== socket.id);
@@ -54,7 +62,25 @@ io.on('connection', (socket) => {
 });
 
 
-server.listen(PORT, () => {
-  console.log(`Listening on PORT ${PORT}`);
-});
 
+
+
+
+///////////////////////////////////////////////////
+
+
+app.get('/', (req, res) => {
+  res.send('Hello');
+})
+
+mongoose.connect(MONGODB_URI, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+  useFindAndModify: false,
+}).then(() => {
+  server.listen(PORT, () => {
+    console.log(`Listening on PORT ${PORT}`);
+  });
+}).catch((e) => {
+  console.error('connection error', e.message);
+})

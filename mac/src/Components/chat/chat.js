@@ -4,21 +4,21 @@ import io from "socket.io-client"
 import "../chat/fff.css"
 
 function Chat() {
-	const [ state, setState ] = useState({ message: "", name: "" })
-	const [ chat, setChat ] = useState([])
+	const [state, setState] = useState({ message: "", name: "" })
+	const [chat, setChat] = useState([])
 
 	const socketRef = useRef()
 
 	useEffect(
 		() => {
-			const options = {   transports: ['websocket'],   upgrade: false };
-			socketRef.current = io.connect("http://localhost:5000",options)
+			const options = { transports: ['websocket'], upgrade: false };
+			socketRef.current = io.connect("http://localhost:5000", options)
 			socketRef.current.on("message", ({ name, message }) => {
-				setChat([ ...chat, { name, message } ])
+				setChat([...chat, { name, message }])
 			})
 			return () => socketRef.current.disconnect()
 		},
-		[ chat ]
+		[chat]
 	)
 
 	const onTextChange = (e) => {
@@ -52,11 +52,20 @@ function Chat() {
 				<div>
 					<TextField
 						name="message"
+						className="textField"
 						onChange={(e) => onTextChange(e)}
 						value={state.message}
 						id="outlined-multiline-static"
 						variant="outlined"
 						label="Message"
+						InputProps={{
+							style: {
+								color: "Danube"
+							}
+						}}
+
+
+
 					/>
 				</div>
 				<button>Send Message</button>
