@@ -1,0 +1,10 @@
+#slide{
+    margin-left: 0px;
+    background-color: red;
+    background-image: url('https://pixelplex.io/wp-content/uploads/2021/01/artificial-intelligence-applications-in-healthcare-main-image-1600.jpg');
+background-position: center;
+background-size: cover;
+background-repeat: no-repeat;
+width: 100%;
+height: 800px;
+}

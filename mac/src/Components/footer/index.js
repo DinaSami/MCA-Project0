@@ -7,7 +7,7 @@ export default class Footer extends Component {
     render() {
         return (
             <div className='my-footer-color  ' id='scroll' >
-                <div  >
+                <div>
                     <section className='my-footer-color  ' >
                         <div className=" text-center text-md-start mt-5"  >
                             <div className="row mt-3 ">
