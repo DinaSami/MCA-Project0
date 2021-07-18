@@ -13,11 +13,11 @@
 ## URLs
 * Heroku applications
 
-[Heroku deploynment]()
+[Heroku deploynment](https://project-mca-back.herokuapp.com/)
 
 * Netlify applications
 
-[Netlify deploynment]()
+[Netlify deploynment](https://quirky-goldstine-e67ff1.netlify.app)
 
 * Github actions
 
